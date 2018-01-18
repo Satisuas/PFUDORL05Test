@@ -85,8 +85,8 @@ public class BubbleSortTestEq {
 		int[] res3 = BubbleSort.abc(in3);
 		int[] res4 = BubbleSort.abc(in4);
 		
-		assertArrayEquals(exp2, res2);
 		assertArrayEquals(exp3, res3);
+		assertArrayEquals(exp2, res2);
 		assertArrayEquals(exp4, res4);
 	}
 	
@@ -191,6 +191,8 @@ public class BubbleSortTestEq {
 	
 	@Test
 	public void testUnsortiert4() {
+		int[] in0 = {2,2,6,1,6,1};
+		
 		int[] in10 = {6,3,1,6,3,1};
 		int[] in11 = {2,2,6,6,1,1};
 		int[] in12 = {5,4,5,3,3,4};
@@ -199,9 +201,13 @@ public class BubbleSortTestEq {
 		int[] exp11 = {1,1,2,2,6,6};
 		int[] exp12 = {3,3,4,4,5,5};
 		
+		int[] res0 = BubbleSort.abc(in0);
+		
 		int[] res10 = BubbleSort.abc(in10);
 		int[] res11 = BubbleSort.abc(in11);
 		int[] res12 = BubbleSort.abc(in12);
+		
+		assertArrayEquals(exp11, res0);
 		
 		assertArrayEquals(exp10, res10);
 		assertArrayEquals(exp11, res11);
