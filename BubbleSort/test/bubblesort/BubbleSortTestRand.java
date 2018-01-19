@@ -11,7 +11,7 @@ public class BubbleSortTestRand {
 	@Test
 	public void test() {
 
-		for (int j = 0; j < 1000000; j++) {
+		for (int j = 0; j < 1000000000; j++) {
 			int[] in = new int[6];
 			for (int i = 0; i < 6; i++) {
 				in[i] = (int) Math.random() * 100;
