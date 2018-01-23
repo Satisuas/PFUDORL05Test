@@ -3,10 +3,9 @@ package bubblesort;
 import java.util.Scanner;
 
 public class IO {
-	
+
 	private static final int LAENGE = 6;
 	private static IOuse ioUse = new IOuse();
-	
 
 	/**
 	 * @param args
@@ -20,13 +19,26 @@ public class IO {
 
 }
 
-class IOuse{
+class IOuse {
 	private Scanner sc = new Scanner(System.in);
+
 	int[] einlesen(int laenge) {
-		int[] eingabe = new int[6];
-		for (int i = 0; i < laenge; i++) {
-			eingabe[i] = sc.nextInt();
-		}
+		int[] eingabe = new int[laenge];
+		boolean flag;
+		System.out.println("Gib 6 Integer ein");
+		do {
+			flag = true;
+			for (int i = 0; i < laenge; i++) {
+				if (!sc.hasNextInt()) {
+					System.out.println("Ungültige Eingabe, Nur Integer sind Erlaubt, bitte versuche es erneut");
+					flag = false;
+					sc.next();
+					break;
+				} else {
+					eingabe[i] = sc.nextInt();
+				}
+			}
+		} while (!flag);
 		return eingabe;
 	}
 
